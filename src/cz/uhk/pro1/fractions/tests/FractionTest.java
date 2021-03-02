@@ -28,4 +28,38 @@ public class FractionTest {
         assertEquals(1, r.getNumerator());
         assertEquals(21, r.getDenominator());
     }
+
+    @Test
+    public void testPlus() {
+        // pripravime vstupy
+        Fraction fraction1 = new Fraction(1, 4);
+        Fraction fraction2 = new Fraction(1, 4);
+        // provedeme operaci
+        Fraction r = fraction1.plus(fraction2);
+        assertEquals(1, r.getNumerator());
+        assertEquals(2, r.getDenominator());
+        //assertEquals(new Fraction(1,2), r); // TODO museli bychom impl. metodu equals
+    }
+
+    @Test
+    public void testMinus() {
+        // pripravime vstupy
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(1, 4);
+        // provedeme operaci
+        Fraction r = fraction1.minus(fraction2);
+        assertEquals(1, r.getNumerator());
+        assertEquals(4, r.getDenominator());
+    }
+
+    @Test
+    public void testDiv() {
+        // pripravime vstupy
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(1, 4);
+        // provedeme operaci
+        Fraction r = fraction1.div(fraction2);
+        assertEquals(2, r.getNumerator());
+        assertEquals(1, r.getDenominator());
+    }
 }
