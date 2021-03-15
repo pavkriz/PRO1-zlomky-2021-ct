@@ -16,6 +16,19 @@ public class Fraction {
     }
 
     @Override
+    public boolean equals(Object other) {
+        if (other instanceof Fraction) {
+            Fraction otherNormalized = ((Fraction) other).normalized();
+            Fraction thisNormalized = this.normalized();
+
+            return otherNormalized.numerator == thisNormalized.numerator
+                    && otherNormalized.denominator == thisNormalized.denominator;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return numerator + "/" + denominator;
     }
